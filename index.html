@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cha Balloon Bouquet</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f8f8f8;
+    margin:0;
+}
+
+header{
+    background:#ff69b4;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:15px;
+    margin:15px 0;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+button{
+    background:#25D366;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.order-form{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid #ddd;
+    border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎈 Cha Balloon Bouquet</h1>
+    <p>Buket Balon untuk Wisuda, Ulang Tahun & Anniversary</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h3>Buket Balon Wisuda</h3>
+        <p>Harga: Rp75.000</p>
+    </div>
+
+    <div class="card">
+        <h3>Buket Balon Ulang Tahun</h3>
+        <p>Harga: Rp60.000</p>
+    </div>
+
+    <div class="card">
+        <h3>Buket Balon Anniversary</h3>
+        <p>Harga: Rp85.000</p>
+    </div>
+
+    <div class="order-form">
+        <h2>Form Pemesanan</h2>
+
+        <input type="text" id="nama" placeholder="Nama Pemesan">
+
+        <input type="text" id="produk" placeholder="Jenis Buket">
+
+        <textarea id="catatan" placeholder="Catatan Pesanan"></textarea>
+
+        <button onclick="pesanWA()">Pesan via WhatsApp</button>
+    </div>
+
+</div>
+
+<script>
+
+function pesanWA(){
+
+let nama = document.getElementById("nama").value;
+let produk = document.getElementById("produk").value;
+let catatan = document.getElementById("catatan").value;
+
+let nomor = "6285255218010"; 
+
+let pesan =
+`Halo Kak, saya ingin memesan Buket Balon.
+
+Nama: ${nama}
+Produk: ${produk}
+Catatan: ${catatan}`;
+
+window.open(
+`https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`,
+'_blank'
+);
+
+}
+
+</script>
+
+</body>
+</html>
